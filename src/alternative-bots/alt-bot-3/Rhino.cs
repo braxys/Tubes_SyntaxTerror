@@ -11,7 +11,7 @@ public class Rhino : Bot
     }
 
     // Constructor, which loads the bot config file
-    RHino() : base(BotInfo.FromFile("Rhino.json")) { }
+    Rhino() : base(BotInfo.FromFile("Rhino.json")) { }
 
     // Called when a new round is started -> initialize and do some movement
     public override void Run()
