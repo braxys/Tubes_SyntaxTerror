@@ -2,7 +2,7 @@
   "name": "Syntax Terror",
   "version": "1.0",
   "authors": ["Bagas Hari Muthi", "Arief Fandi Satria", "Arya Dimar Fath"],
-  "description": "Deskripsi strategi greedy yang digunakan",
+  "description": "Memilih target terdekat dan menyesuaikan daya tembak secara serakah untuk memastikan akurasi dan bullet damage tertinggi pada setiap giliran.",
   "homepage": "",
   "countryCodes": ["id"],
   "platform": "«Java or .Net»",

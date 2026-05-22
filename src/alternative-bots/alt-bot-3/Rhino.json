@@ -2,7 +2,7 @@
   "name": "Syntax Terror",
   "version": "1.0",
   "authors": ["Bagas Hari Muthi", "Arief Fandi Satria", "Arya Dimar Fath"],
-  "description": "Deskripsi strategi greedy yang digunakan",
+  "description": "Mengabaikan serangan jarak jauh dan selalu mengambil rute terpendek untuk menabrak musuh demi meraih ram damage yang masif secara instan.",
   "homepage": "",
   "countryCodes": ["id"],
   "platform": "«Java or .Net»",

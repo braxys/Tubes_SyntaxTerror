@@ -12,7 +12,6 @@ public class Ghost : Bot
 
     public override void Run()
     {
-        // Kustomisasi warna sesuai identitas Ghost
         BodyColor   = Color.FromArgb(0x55, 0x55, 0x66); 
         TurretColor = Color.FromArgb(0x22, 0x22, 0x2E); 
         RadarColor  = Color.FromArgb(0xAA, 0xAA, 0xFF); 
@@ -21,13 +20,11 @@ public class Ghost : Bot
         TracksColor = Color.FromArgb(0x11, 0x11, 0x11); 
         GunColor    = Color.FromArgb(0x66, 0x66, 0x88); 
 
-        // PERBAIKAN ERROR (Baris 25 & 26): Membuang awalan "Is" sesuai dengan API v0.30.0
         AdjustRadarForGunTurn = true;
         AdjustGunForBodyTurn = true;
 
         while (IsRunning)
         {
-            // FUNGSI KELAYAKAN: Radar terus berputar secara serakah mencari musuh
             TurnRadarRight(360);
         }
     }
@@ -37,11 +34,7 @@ public class Ghost : Bot
         double enemyDir = DirectionTo(e.X, e.Y);
         double distance = DistanceTo(e.X, e.Y);
 
-        // ==========================================
-        // 1. GREEDY TARGETING (Defensive Firing)
-        // ==========================================
         // Fungsi Seleksi: Membidik musuh dan menembak dengan energi minimum (Power 1)
-        // Tujuannya menabung energi untuk bertahan hidup sambil "mencicil" darah musuh.
         double gunTurn = CalcGunBearing(enemyDir);
         TurnGunRight(gunTurn);
         
@@ -51,27 +44,23 @@ public class Ghost : Bot
             Fire(1); 
         }
 
-        // ==========================================
-        // 2. GREEDY EVASION (Survival Movement)
-        // ==========================================
         // Fungsi Seleksi: Memilih rute yang memaksimalkan jarak dari ancaman
         double bodyTurn = CalcBearing(enemyDir);
         double evasiveAngle;
 
         if (distance < 400)
         {
-            // Heuristik: Jika musuh terlalu dekat, lari serong (110 derajat) untuk menjauh
+            // Jika musuh terlalu dekat, lari serong (110 derajat) untuk menjauh
             evasiveAngle = bodyTurn + 110;
         }
         else
         {
-            // Heuristik: Jika musuh cukup jauh, bergerak tegak lurus (90 derajat) untuk menghindari peluru
+            // Jika musuh cukup jauh, bergerak tegak lurus (90 derajat) untuk menghindari peluru
             evasiveAngle = bodyTurn + 90;
         }
 
         TurnRight(evasiveAngle); 
         
-        // Cek dinding sebelum bermanuver (Fungsi Kelayakan Ekstra)
         CheckWallCollision();
 
         // Bergerak maju/mundur dengan kecepatan acak (patah-patah) agar sulit dibidik
@@ -80,16 +69,16 @@ public class Ghost : Bot
 
     public override void OnHitWall(HitWallEvent e)
     {
-        // Fungsi Kelayakan: Jika menabrak dinding, segera balik arah (reverse)
+        // Fungsi Kelayakan: Jika menabrak dinding balik arah
         moveDirection *= -1;
         Forward(100 * moveDirection);
     }
 
-    // Fungsi tambahan untuk Fungsi Kelayakan (Wall Avoidance Cerdas)
+    // Fungsi tambahan untuk Fungsi Kelayakan
     private void CheckWallCollision()
     {
         double margin = 50; // Jarak aman dari dinding
-        if (X < margin || X > 800 - margin || Y < margin || Y > 600 - margin) // Ukuran default 800x600
+        if (X < margin || X > 800 - margin || Y < margin || Y > 600 - margin)
         {
             // Secara serakah langsung membalik arah jika mendeteksi dinding untuk menghindari Wall Damage
             moveDirection *= -1;
