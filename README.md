@@ -1,4 +1,4 @@
-# Syntax Terror — Robocode Tank Royale Bot
+# Syntax Terror - Robocode Tank Royale Bot
 
 ## Algoritma Greedy yang Diimplementasikan
 
@@ -23,7 +23,7 @@ Overclock menerapkan greedy berlapis dengan tiga prioritas keputusan pada setiap
 
 ---
 
-### Alt-Bot 1 — Deadlock
+### Alt-Bot 1 - Deadlock
 
 **Strategi:** *Greedy Minimum Distance + Full Fire*
 
@@ -35,7 +35,7 @@ Deadlock mengunci satu target secara permanen dan terus mendekatinya tanpa henti
 
 ---
 
-### Alt-Bot 2 — Ghost
+### Alt-Bot 2 - Ghost
 
 **Strategi:** *Greedy Minimum Energy + Maximum Evasion*
 
@@ -48,7 +48,7 @@ Ghost menerapkan filosofi bertahan hidup: menembak seminimal mungkin dan selalu 
 
 ---
 
-### Alt-Bot 3 — Rhino
+### Alt-Bot 3 - Rhino
 
 **Strategi:** *Greedy Maximum Ramming*
 
