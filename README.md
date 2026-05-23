@@ -102,7 +102,6 @@ Overclock.cmd
 
 - **Sinkronisasi radar-gun-body:** Tanpa `AdjustRadarForGunTurn = true` dan `AdjustGunForBodyTurn = true`, perputaran body menyebabkan meriam dan radar ikut bergerak sehingga aiming tidak akurat.
 - **Wall damage:** Bot agresif seperti Deadlock dan Rhino sering menabrak dinding. Solusi: menambahkan pengecekan `CheckWallCollision()` berbasis margin koordinat.
-- **Merge conflict branch:** Terjadi konflik saat menggabungkan branch `experiment/Deadlock` dan `experiment/all` ke `main` karena perubahan simultan pada struktur file bot.
 
 ---
 
