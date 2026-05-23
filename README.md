@@ -110,8 +110,8 @@ Overclock.cmd
 | Nama | Peran |
 |------|-------|
 | **Bagas Hari Muthi** | 124140128 |
-| **Arief Fandi Satria** | 124140212 |
-| **Arya Dimar Fath** | 124140020 |
+| **Arief Fandi Satria** | 124140020 |
+| **Arya Dimar Fath** | 124140212 |
 
 > Tim: **SyntaxTerror**
 > Bahasa: C# (.NET)
