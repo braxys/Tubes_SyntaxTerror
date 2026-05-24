@@ -107,7 +107,7 @@ Overclock.cmd
 
 ## Authors
 
-| Nama | Peran |
+| Nama | NIM |
 |------|-------|
 | **Bagas Hari Muthi** | 124140128 |
 | **Arief Fandi Satria** | 124140020 |
